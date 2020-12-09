@@ -46,14 +46,24 @@ var workouts: [Workout] = [
  
  Напишите функции `describeRun(runningWorkout:)` и `describeSwim(swimmingWorkout:)`, принимающие объекты типа`Run` и `Swim` соответственно.  Ни одна не должна возвращать значений.  Каждая функция должна вывести описание тренировки, включая темп бега, либо стиль плавания.  Время представлено в секундах, расстояние — в метрах, темп — в шагах в минуту.
  */
-func describeRun(runningWorkout: (Run, Swim)) {
-    for _ in workouts {
+func describeRun(runningWorkout: [Workout]) {
+    for object in workouts {
+        if var localObject = object as? Run {
+            print("Run, cadence: \(localObject.cadence), time: \(localObject.time), \(localObject.distance)")
+        }
     }
 }
 
+func describeSwim(runningWorkout: [Workout]) {
+    for object in workouts {
+        if var localObject = object as? Swim {
+            print("Swim, stroke: \(localObject.stroke), time: \(localObject.time), distance: \(localObject.distance)")
+        }
+    }
+}
 
-
-
+describeRun(runningWorkout: workouts)
+describeSwim(runningWorkout: workouts)
 
 /*:
  Переберите все тренировки в массиве `workouts` и, с помощью приведения типов, вызовите либо `describeRun(runningWorkout:)`, либо `describeSwim(swimmingWorkout:)` для каждого.  Обратите внимание, что будет выведено в консоль.
