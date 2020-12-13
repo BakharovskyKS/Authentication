@@ -23,10 +23,10 @@ class ForgotPasswordView : UIViewController {
     }
     
     @IBAction func showPassAlert(_ sender: Any) {
-        showAlert(title: "Oops!", message: "Your password is \(password)'")
+        showAlert(title: "Oops!", message: "Your password is '\(password)'")
     }
     @IBAction func showUsernameAlert(_ sender: Any) {
-        showAlert(title: "Oops!", message: "Your username is \(username)'")
+        showAlert(title: "Oops!", message: "Your username is '\(username)'")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

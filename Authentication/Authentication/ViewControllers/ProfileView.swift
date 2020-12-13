@@ -16,7 +16,7 @@ class ProfileView : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let username = self.username else { return }
+        guard let username = username else { return }
         usernameLabel.text = "Hello, \(username)"
     }
     
