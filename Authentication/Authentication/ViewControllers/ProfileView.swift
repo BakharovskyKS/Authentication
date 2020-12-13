@@ -7,6 +7,17 @@
 
 import UIKit
 
+
 class ProfileView : UIViewController {
+    var username: String?
+
+    @IBOutlet var usernameLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        guard let username = self.username else { return }
+        usernameLabel.text = "Hello, \(username)"
+    }
     
 }

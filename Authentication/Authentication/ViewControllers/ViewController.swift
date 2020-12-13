@@ -36,23 +36,29 @@ class ViewController: UIViewController {
         }
     }
     
-    func verification(){
+    func verification() -> Bool{
         if (loginTF.text == username && passwordTF.text == password) {
             forgotPassword.isHidden = true
+            return true
         } else {
             forgotPassword.isHidden = false
+            return false
         }
     }
     
     @IBAction func logintButtonAction(_ sender: Any) {
-        verification()
-//        guard !verification() else { return }
-//        performSegue(withIdentifier: "ProfileView", sender: nil)
+        guard verification() else { return }
+        performSegue(withIdentifier: "profileView", sender: nil)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//      guard let dvc = segue.destination as? ProfileView else { return }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      guard let dvc = segue.destination as? ProfileView else { return }
+        dvc.username = loginTF.text
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
 
 

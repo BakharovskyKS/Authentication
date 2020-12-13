@@ -128,6 +128,7 @@
                         <outlet property="loginButton" destination="IbG-8C-Hy5" id="gIk-EF-0oV"/>
                         <outlet property="loginTF" destination="N7V-ib-qsV" id="e49-WY-uqm"/>
                         <outlet property="passwordTF" destination="SwL-fp-qQP" id="a5b-EK-hwg"/>
+                        <segue destination="R7Q-BI-yVm" kind="show" identifier="profileView" id="2Th-aW-mUL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -151,11 +152,24 @@
                                     <tabBarItem title="" image="rosette" catalog="system" id="Ivo-y1-Ydf"/>
                                 </items>
                             </tabBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq5-To-glz">
+                                <rect key="frame" x="151" y="164" width="112" height="58"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tJt-cs-h1J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Pq5-To-glz" firstAttribute="top" secondItem="tJt-cs-h1J" secondAttribute="top" constant="120" id="0jf-ki-CPM"/>
+                            <constraint firstItem="Pq5-To-glz" firstAttribute="centerX" secondItem="m2q-uY-tw7" secondAttribute="centerX" id="5vj-2i-tr1"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0Hr-Zf-VY5"/>
+                    <connections>
+                        <outlet property="usernameLabel" destination="Pq5-To-glz" id="bXZ-Fk-vcb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jmi-ng-KRx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
